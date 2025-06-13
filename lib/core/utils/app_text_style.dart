@@ -16,6 +16,7 @@ class AppTextStyle {
   }
 
   // Heading Texts
+  static TextStyle get headingXLarge => _textStyle(34, FontWeight.w600);
   static TextStyle get headingLarge => _textStyle(24, FontWeight.w600);
   static TextStyle get headingMedium => _textStyle(22, FontWeight.w600);
   static TextStyle get headingSmall => _textStyle(20, FontWeight.w600);

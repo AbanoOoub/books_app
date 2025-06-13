@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     required this.title,
-    required this.isHaveBackButton,
+    this.isHaveBackButton = true,
     this.backgroundColor,
     this.foregroundColor,
     this.titleColor,
@@ -20,7 +20,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.iconColor,
     this.onBackPressed,
     this.actions,
+    this.centerTitle,
     this.toolbarHeight,
+    this.titleTextStyle,
   });
 
   final String title;
@@ -33,20 +35,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onBackPressed;
   final List<Widget>? actions;
   final double? toolbarHeight;
+  final bool? centerTitle;
+  final TextStyle? titleTextStyle;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: false,
+      centerTitle: centerTitle,
       toolbarHeight: kToolbarHeight,
       scrolledUnderElevation: 0,
       foregroundColor: foregroundColor,
       backgroundColor: backgroundColor ?? Colors.transparent,
       title: CustomTextWidget(
         text: title,
-        textStyle: AppTextStyle.bodyMedium,
-        textColor: AppColors.textColor,
-        fontWeight: FontWeight.w400,
+        textStyle: titleTextStyle ?? AppTextStyle.bodyMedium,
+        textColor: titleColor ?? AppColors.textColor,
       ),
       actions: actions,
       automaticallyImplyLeading: isHaveBackButton,
