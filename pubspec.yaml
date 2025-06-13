@@ -36,6 +36,7 @@ dependencies:
   shimmer: ^3.0.0
   lottie: ^3.3.1
   readmore: ^3.0.0
+  supercharged: ^2.1.1
 
 
 # Flutter generator config
@@ -67,7 +68,7 @@ flutter:
   assets:
     - assets/images/
     - assets/animations/
-    - assets/languages/
+    - assets/translations/
 
   # fonts:
   #   - family: Schyler

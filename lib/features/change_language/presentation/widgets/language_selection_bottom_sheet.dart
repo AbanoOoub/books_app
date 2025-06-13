@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/routes/app_router.dart';
 import '../../../../core/constants/app_locales.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../generated/locale_keys.g.dart';
+import '../../../../gen/locale_keys.g.dart';
 import '../../../../init_main.dart';
 import '../manager/change_lang_cubit.dart';
 

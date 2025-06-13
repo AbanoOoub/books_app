@@ -3,15 +3,19 @@ import 'package:books_app/core/extensions/padding_extensions.dart';
 import 'package:books_app/core/utils/app_text_style.dart';
 import 'package:books_app/core/utils/shared_widgets/custom_app_bar.dart';
 import 'package:books_app/core/utils/shared_widgets/custom_text_form_field.dart';
+import 'package:books_app/core/utils/shared_widgets/empty_widget.dart';
 import 'package:books_app/features/book_list/presentation/manager/book_list_cubit.dart';
 import 'package:books_app/features/book_list/presentation/widgets/shimmers/book_list_shimmer.dart';
 import 'package:books_app/init_main.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/shared_widgets/custom_ink_well.dart';
+import '../../../../gen/assets.gen.dart';
+import '../../../../gen/locale_keys.g.dart';
 import '../../../change_language/presentation/widgets/language_selection_bottom_sheet.dart';
 import '../widgets/book_item.dart';
 
@@ -23,7 +27,7 @@ class BookListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Gutenberg Books',
+        title: LocaleKeys.gutenbergBooks.tr(),
         isHaveBackButton: false,
         centerTitle: true,
         titleTextStyle: AppTextStyle.headingXLarge,
@@ -39,11 +43,7 @@ class BookListScreen extends StatelessWidget {
                   },
                 );
               },
-              child: Icon(
-                Icons.language,
-                size: 20.h,
-                color: AppColors.textColor,
-              ),
+              child: Icon(Icons.language),
             ),
           ),
         ],
@@ -63,7 +63,7 @@ class BookListScreen extends StatelessWidget {
                     CustomTextFormField(
                       prefixItem:
                           Icon(Icons.search, color: AppColors.textColor),
-                      hint: 'Search Books',
+                      hint: LocaleKeys.searchBooks.tr(),
                       borderSide: BorderSide.none,
                       onChange: (s) =>
                           context.read<BookListCubit>().addSearchTerm(s),
@@ -79,19 +79,37 @@ class BookListScreen extends StatelessWidget {
                           return BookListShimmer();
                         }
                         return Expanded(
-                          child: ListView.separated(
-                            controller: state.scrollController,
-                            itemCount: state.books.length,
-                            itemBuilder: (context, index) => BookItem(
-                              imageUrl: state.books[index].formats.imageJpeg,
-                              title: state.books[index].titleOfBook,
-                              authors: state.books[index].authorsList,
-                              summaries: state.books[index].summaries,
-                              downloadsCount: state.books[index].downloadsCount,
-                            ),
-                            separatorBuilder: (context, index) =>
-                                10.verticalSpace,
-                          ),
+                          child: state.books.isEmpty
+                              ? Center(
+                                  child: SingleChildScrollView(
+                                    physics: AlwaysScrollableScrollPhysics(),
+                                    child: EmptyWidget(
+                                      content: Assets.images.logo.image(
+                                        height: 150.h,
+                                        width: 150.w,
+                                        fit: BoxFit.contain,
+                                        color: AppColors.bgColor,
+                                        colorBlendMode: BlendMode.modulate,
+                                      ),
+                                      text: LocaleKeys.noResults.tr(),
+                                    ),
+                                  ),
+                                )
+                              : ListView.separated(
+                                  controller: state.scrollController,
+                                  itemCount: state.books.length,
+                                  itemBuilder: (context, index) => BookItem(
+                                    imageUrl:
+                                        state.books[index].formats.imageJpeg,
+                                    title: state.books[index].titleOfBook,
+                                    authors: state.books[index].authorsList,
+                                    summaries: state.books[index].summaries,
+                                    downloadsCount:
+                                        state.books[index].downloadsCount,
+                                  ),
+                                  separatorBuilder: (context, index) =>
+                                      10.verticalSpace,
+                                ),
                         );
                       },
                     ),

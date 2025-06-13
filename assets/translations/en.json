@@ -6,5 +6,10 @@
   "showLess": "Show less",
   "languages": "Languages",
   "arabic": "Arabic",
-  "english": "English"
+  "english": "English",
+  "downloaded": "Downloaded",
+  "time": {
+    "one": "time",
+    "other": "times"
+  }
 }

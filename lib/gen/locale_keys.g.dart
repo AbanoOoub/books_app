@@ -11,5 +11,7 @@ abstract class  LocaleKeys {
   static const languages = 'languages';
   static const arabic = 'arabic';
   static const english = 'english';
+  static const downloaded = 'downloaded';
+  static const time = 'time';
 
 }

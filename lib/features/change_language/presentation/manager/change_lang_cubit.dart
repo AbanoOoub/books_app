@@ -23,7 +23,7 @@ class ChangeLangCubit extends Cubit<ChangeLangState> {
       {required BuildContext context, required String newLangCode}) {
     if (state.currentLangCode != newLangCode) {
       try {
-        context.setLocale(Locale(newLangCode));
+        EasyLocalization.of(context)?.setLocale(Locale(newLangCode));
         emit(state.copyWith(
           currStatus: ChangeLangStateStatus.changeLangSuccess(),
           currentLangCode: newLangCode,

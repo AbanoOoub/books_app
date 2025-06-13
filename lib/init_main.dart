@@ -54,7 +54,7 @@ Future<Widget> initMain(Widget child) async {
       Locale(const AppLocales().localeAr),
       Locale(const AppLocales().localeEN),
     ],
-    path: 'assets/languages',
+    path: 'assets/translations',
     startLocale: Locale(const AppLocales().localeEN),
     fallbackLocale: Locale(const AppLocales().localeEN),
     saveLocale: true,

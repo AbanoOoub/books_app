@@ -1,5 +1,6 @@
 import 'package:books_app/core/extensions/padding_extensions.dart';
 import 'package:books_app/core/utils/app_text_style.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
@@ -7,6 +8,7 @@ import 'package:readmore/readmore.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/custom_network_image.dart';
 import '../../../../core/utils/shared_widgets/custom_text_widget.dart';
+import '../../../../gen/locale_keys.g.dart';
 import '../../domain/entities/book_entity.dart';
 
 class BookItem extends StatelessWidget {
@@ -66,7 +68,10 @@ class BookItem extends StatelessWidget {
                   ),
                   10.verticalSpace,
                   CustomTextWidget(
-                    text: "Downloaded ${downloadsCount.toString()} Times",
+                    text:
+                        "${LocaleKeys.downloaded.tr()} ${downloadsCount.toString()} ${LocaleKeys.time.tr(args: [
+                          downloadsCount.toString()
+                        ])}",
                     maxLines: 2,
                     textStyle: AppTextStyle.bodySmall,
                     textColor: AppColors.grey,
@@ -79,19 +84,15 @@ class BookItem extends StatelessWidget {
           ReadMoreText(
             "${summaries.map((e) => e.toString())}",
             textAlign: TextAlign.start,
-            style: Theme.of(context).textTheme.bodySmall,
-            moreStyle: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(color: AppColors.mainColor),
-            lessStyle: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(color: AppColors.mainColor),
+            style: AppTextStyle.bodySmall,
+            moreStyle:
+                AppTextStyle.bodySmall.copyWith(color: AppColors.mainColor),
+            lessStyle:
+                AppTextStyle.bodySmall.copyWith(color: AppColors.mainColor),
             trimMode: TrimMode.Line,
             trimLines: 3,
-            trimCollapsedText: 'LocaleKeys.showMore.tr()',
-            trimExpandedText: " ${'LocaleKeys.showLess.tr()'}",
+            trimCollapsedText: LocaleKeys.showMore.tr(),
+            trimExpandedText: " ${LocaleKeys.showLess.tr()}",
           )
         ],
       ),
