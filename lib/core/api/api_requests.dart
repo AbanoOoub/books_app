@@ -1,15 +1,14 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import '../../init_main.dart';
+import '../constants/end_points.dart';
 import '../error/exceptions.dart';
 import '../helpers/pretty_logs.dart';
 import 'interfaces/i_api_requests.dart';
 import 'interceptors/app_interceptors.dart';
-import '../app_constants/end_points.dart';
 
 @Injectable(as: IApiRequests)
 class ApiRequests implements IApiRequests {
@@ -20,7 +19,7 @@ class ApiRequests implements IApiRequests {
       BaseOptions(
         baseUrl: EndPoints.baseUrl,
         responseType: ResponseType.json,
-        followRedirects: false,
+        followRedirects: true,
         contentType: Headers.jsonContentType,
       ),
     );
@@ -172,14 +171,14 @@ class ApiRequests implements IApiRequests {
   }
 
   dynamic _handleResponse(Response response) {
-    log("Response: ${response.data}");
-
-    if (response.data['success'] == false) {
-      final error = response.data['error'];
-      throw ServerException(
-          '${error['type'] ?? "Something went wrong, Try again!"}');
-    } else {
-      return response.data;
-    }
+    // log("Response: ${response.data}");
+    return response.data;
+    // if (response.data['success'] == false) {
+    //   final error = response.data['error'];
+    //   throw ServerException(
+    //       '${error['type'] ?? "Something went wrong, Try again!"}');
+    // } else {
+    //   return response.data;
+    // }
   }
 }
