@@ -1,4 +1,4 @@
-import 'package:books_app/core/app_constants/app_locales.dart';
+import 'package:books_app/core/constants/app_locales.dart';
 import 'package:books_app/core/extensions/padding_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
