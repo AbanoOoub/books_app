@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../core/constants/app_locales.dart';
-
 part 'change_lang_state.dart';
 
 part 'change_lang_cubit.freezed.dart';
