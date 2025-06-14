@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/shared_widgets/adaptive_layout_builder.dart';
 
 class BookItemShimmerMobileLayout extends StatelessWidget {
   const BookItemShimmerMobileLayout({super.key});

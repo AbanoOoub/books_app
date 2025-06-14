@@ -1,11 +1,8 @@
-import 'package:books_app/core/extensions/padding_extensions.dart';
-import 'package:books_app/core/utils/shared_widgets/shimmer_widget.dart';
 import 'package:books_app/features/book_list/presentation/widgets/shimmers/book_item_shimmer_mobile_layout.dart';
 import 'package:books_app/features/book_list/presentation/widgets/shimmers/book_item_shimmer_tablet_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/shared_widgets/adaptive_layout_builder.dart';
 
 class BookListShimmer extends StatelessWidget {

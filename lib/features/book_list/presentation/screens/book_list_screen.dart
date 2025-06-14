@@ -6,8 +6,6 @@ import 'package:books_app/core/utils/shared_widgets/custom_app_bar.dart';
 import 'package:books_app/core/utils/shared_widgets/custom_text_form_field.dart';
 import 'package:books_app/core/utils/shared_widgets/empty_widget.dart';
 import 'package:books_app/features/book_list/presentation/manager/book_list_cubit.dart';
-import 'package:books_app/features/book_list/presentation/widgets/shimmers/book_item_shimmer_mobile_layout.dart';
-import 'package:books_app/features/book_list/presentation/widgets/shimmers/book_item_shimmer_tablet_layout.dart';
 import 'package:books_app/init_main.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
