@@ -19,10 +19,13 @@ Cached data is used when the app is offline.
 🧠 Clean Architecture:
 Layered structure: Data → Domain → Presentation.
 
-SOLID principles applied throughout.
-🔁 Dependency Injection: Managed with injectable and get_it.
-🌍 Localization: Easily translatable using easy_localization.
-🧪 Error Handling: Graceful handling for Dio errors (e.g., 301 redirects).
+SOLID principles applied throughout:
+
+  🔁 Dependency Injection: Managed with injectable and get_it.
+
+  🌍 Localization: Easily translatable using easy_localization.
+
+  🧪 Error Handling: Graceful handling for Dio errors (e.g., 301 redirects).
 
 🧰 Utilities:
 Responsive design using flutter_screenutil.
@@ -33,6 +36,7 @@ Cached images with placeholders using cached_network_image.
 🔄 Pull to Refresh: Custom-themed RefreshIndicator.
 
 # 🛠 Tech Stack
+
 ```plaintext
 (Area)	                 (Package/Tool)
 State Management	    -> flutter_bloc
@@ -70,9 +74,13 @@ lib/
 
 # 🔧 Getting Started
 git clone https://github.com/AbanoOoub/books_app.git
+
 cd books_app
+
 flutter pub get
+
 flutter pub run build_runner build --delete-conflicting-outputs
+
 flutter run
 
 
