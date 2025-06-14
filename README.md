@@ -30,11 +30,8 @@ SOLID principles applied throughout:
   🧪 Error Handling: Graceful handling for Dio errors (e.g., 301 redirects).
 
 🧰 Utilities:
-
 Responsive design using flutter_screenutil.
-
 Adaptive design using LayoutBuilder with MediaQuery.
-
 Cached images with placeholders using cached_network_image.
 
 📱 Theming: Customizable light theme with app-wide color and typography settings.
