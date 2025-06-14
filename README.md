@@ -3,12 +3,15 @@ A Flutter application that allows users to browse and search books with offline 
 Built with scalable, maintainable code using best practices like dependency injection, BLoC, and local data caching.
 
 # 🚀 Features
+
 🔍 Search Books: Search books by title with paginated results.
+
 📄 Book Details: View detailed book information.
+
 📡 API Integration: Fetch data from RESTFUL APIs using Dio.
 
 🌐 Offline Support:
-Data is cached using SQLite to enable browsing without internet.
+Data is cached using SQLite to enable browsing without the internet.
 Cached data is used when the app is offline.
 
 💾 Local Storage: Save full book data locally using SQLite for performance and offline access.
@@ -26,19 +29,20 @@ Responsive design using flutter_screenutil.
 Cached images with placeholders using cached_network_image.
 
 📱 Theming: Customizable light theme with app-wide color and typography settings.
+
 🔄 Pull to Refresh: Custom-themed RefreshIndicator.
 
 # 🛠 Tech Stack
 ```plaintext
-(Area)	              (Package/Tool)
-State Management	    flutter_bloc
-Networking	          dio
-Dependency Injection	injectable, get_it
-Local Storage	        sqflite
-Localization	        easy_localization
-Responsive UI	        flutter_screenutil
-Image Caching	        cached_network_image
-Icons & Assets	      flutter_svg, custom asset gen
+(Area)	                 (Package/Tool)
+State Management	    -> flutter_bloc
+Networking	          -> dio
+Dependency Injection	-> injectable, get_it
+Local Storage	        -> sqflite
+Localization	        -> easy_localization
+Responsive UI	        -> flutter_screenutil
+Image Caching	        -> cached_network_image
+Icons & Assets	      -> flutter_svg, custom asset gen
 ```
 
 # 📦 Project Structure
