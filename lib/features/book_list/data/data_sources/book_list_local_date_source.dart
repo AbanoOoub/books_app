@@ -66,8 +66,6 @@ class BookListLocalDataSourceImpl extends BookListLocalDataSource {
               ]);
         }
       }
-
-      log("Saved Successfully");
     } catch (e) {
       log("Failed to cache book list: $e");
       throw CacheException('Failed to cache book list');

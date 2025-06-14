@@ -20,7 +20,7 @@ class BookItem extends StatelessWidget {
       required this.summaries,
       required this.downloadsCount});
 
-  final String imageUrl;
+  final String? imageUrl;
   final String title;
   final List<PersonEntity> authors;
   final List<String> summaries;

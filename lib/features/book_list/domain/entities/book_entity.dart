@@ -34,7 +34,7 @@ class FormatsEntity {
   final String applicationXMobiPocketEbook;
   final String textPlainCharsetUsAscii;
   final String applicationRdfXml;
-  final String imageJpeg;
+  final String? imageJpeg;
   final String applicationOctetStream;
 
   FormatsEntity({

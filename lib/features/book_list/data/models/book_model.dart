@@ -91,8 +91,8 @@ class FormatsModel extends FormatsEntity {
   final String textPlainCharsetUsAsciiFormat;
   @JsonKey(name: "application/rdf+xml", defaultValue: '')
   final String applicationRdfXmlFormat;
-  @JsonKey(name: "image/jpeg", defaultValue: '')
-  final String imageJpegFormat;
+  @JsonKey(name: "image/jpeg")
+  final String? imageJpegFormat;
   @JsonKey(name: "application/octet-stream", defaultValue: '')
   final String applicationOctetStreamFormat;
 
