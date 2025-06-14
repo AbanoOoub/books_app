@@ -7,7 +7,8 @@ class AppTextStyle {
       BuildContext context, double fontSize, FontWeight fontWeight,
       {bool underline = false}) {
     return TextStyle(
-      fontSize: getResponsiveFontSize(context, fontSize: fontSize),
+      fontSize: getResponsiveFontSize(context,
+          fontSize: AppScreenSize.isMobile(context) ? fontSize : fontSize + 3),
       fontWeight: fontWeight,
       color: AppColors.textColor,
       decoration: underline ? TextDecoration.underline : null,
@@ -30,33 +31,35 @@ class AppTextStyle {
 
   // Body Texts
   static TextStyle bodyLarge(BuildContext context) =>
-      _textStyle(context, 20, FontWeight.w400);
+      _textStyle(context, 22, FontWeight.w400);
 
   static TextStyle bodyMedium(BuildContext context) =>
-      _textStyle(context, 18, FontWeight.w400);
+      _textStyle(context, 20, FontWeight.w400);
 
   static TextStyle bodySmall(BuildContext context) =>
-      _textStyle(context, 16, FontWeight.w400);
+      _textStyle(context, 18, FontWeight.w400);
 
   static TextStyle bodyXSmall(BuildContext context) =>
-      _textStyle(context, 14, FontWeight.w400);
+      _textStyle(context, 16, FontWeight.w400);
 
   // Body Texts SemiBold
   static TextStyle bodyLargeSemiBold(BuildContext context) =>
       _textStyle(context, 20, FontWeight.w700);
+  static TextStyle bodySmallSemiBold(BuildContext context) =>
+      _textStyle(context, 16, FontWeight.w700);
 
   static TextStyle linkMedium(BuildContext context) =>
       _textStyle(context, 18, FontWeight.w400, underline: true);
 
   static TextStyle linkSmall(BuildContext context) =>
-      _textStyle(context, 14, FontWeight.w400, underline: true);
+      _textStyle(context, 16, FontWeight.w400, underline: true);
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
 
-  double lowerLimit = fontSize * 0.85;
+  double lowerLimit = fontSize * 0.9;
   double upperLimit = fontSize * 1.8;
 
   double finalSize = responsiveFontSize.clamp(lowerLimit, upperLimit);

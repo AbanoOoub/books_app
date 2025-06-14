@@ -85,9 +85,9 @@ class BookItem extends StatelessWidget {
             "${summaries.map((e) => e.toString())}",
             textAlign: TextAlign.start,
             style: AppTextStyle.bodySmall(context),
-            moreStyle: AppTextStyle.bodySmall(context)
+            moreStyle: AppTextStyle.bodySmallSemiBold(context)
                 .copyWith(color: AppColors.mainColor),
-            lessStyle: AppTextStyle.bodySmall(context)
+            lessStyle: AppTextStyle.bodySmallSemiBold(context)
                 .copyWith(color: AppColors.mainColor),
             trimMode: TrimMode.Line,
             trimLines: 3,
