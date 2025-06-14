@@ -11,8 +11,8 @@ import '../../../../core/utils/shared_widgets/custom_text_widget.dart';
 import '../../../../gen/locale_keys.g.dart';
 import '../../domain/entities/book_entity.dart';
 
-class BookItem extends StatelessWidget {
-  const BookItem(
+class BookItemMobileLayout extends StatelessWidget {
+  const BookItemMobileLayout(
       {super.key,
       required this.imageUrl,
       required this.title,
@@ -37,49 +37,41 @@ class BookItem extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(children: [
-            CustomNetworkImage(
-              height: 120.h,
-              width: 100.w,
-              imageUrl: imageUrl,
-            ),
-            10.horizontalSpace,
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  CustomTextWidget(
-                    text: title,
+          CustomNetworkImage(
+            height: 350.h,
+            width: double.infinity,
+            radius: 20.r,
+            imageUrl: imageUrl,
+          ),
+          10.verticalSpace,
+          CustomTextWidget(
+            text: title,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            textStyle: AppTextStyle.headingSmall(context),
+          ),
+          10.verticalSpace,
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.start,
+            children: authors
+                .map(
+                  (e) => CustomTextWidget(
+                    text: e.fullName,
                     maxLines: 2,
-                    textStyle: AppTextStyle.headingSmall(context),
                   ),
-                  10.verticalSpace,
-                  Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.start,
-                    children: authors
-                        .map(
-                          (e) => CustomTextWidget(
-                            text: e.fullName,
-                            maxLines: 2,
-                          ),
-                        )
-                        .toList(),
-                  ),
-                  10.verticalSpace,
-                  CustomTextWidget(
-                    text:
-                        "${LocaleKeys.downloaded.tr()} ${downloadsCount.toString()} ${LocaleKeys.time.plural(
-                      downloadsCount,
-                    )}",
-                    maxLines: 2,
-                    textStyle: AppTextStyle.bodySmall(context),
-                    textColor: AppColors.grey,
-                  ),
-                ],
-              ),
-            ),
-          ]),
+                )
+                .toList(),
+          ),
+          10.verticalSpace,
+          CustomTextWidget(
+            text:
+                "${LocaleKeys.downloaded.tr()} ${downloadsCount.toString()} ${LocaleKeys.time.plural(
+              downloadsCount,
+            )}",
+            maxLines: 2,
+            textStyle: AppTextStyle.bodySmall(context),
+            textColor: AppColors.grey,
+          ),
           10.verticalSpace,
           ReadMoreText(
             "${summaries.map((e) => e.toString())}",
