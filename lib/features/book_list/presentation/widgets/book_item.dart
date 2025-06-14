@@ -20,7 +20,7 @@ class BookItem extends StatelessWidget {
       required this.summaries,
       required this.downloadsCount});
 
-  final String imageUrl;
+  final String? imageUrl;
   final String title;
   final List<PersonEntity> authors;
   final List<String> summaries;
@@ -52,7 +52,7 @@ class BookItem extends StatelessWidget {
                   CustomTextWidget(
                     text: title,
                     maxLines: 2,
-                    textStyle: AppTextStyle.headingSmall,
+                    textStyle: AppTextStyle.headingSmall(context),
                   ),
                   10.verticalSpace,
                   Wrap(
@@ -73,7 +73,7 @@ class BookItem extends StatelessWidget {
                       downloadsCount,
                     )}",
                     maxLines: 2,
-                    textStyle: AppTextStyle.bodySmall,
+                    textStyle: AppTextStyle.bodySmall(context),
                     textColor: AppColors.grey,
                   ),
                 ],
@@ -84,11 +84,11 @@ class BookItem extends StatelessWidget {
           ReadMoreText(
             "${summaries.map((e) => e.toString())}",
             textAlign: TextAlign.start,
-            style: AppTextStyle.bodySmall,
-            moreStyle:
-                AppTextStyle.bodySmall.copyWith(color: AppColors.mainColor),
-            lessStyle:
-                AppTextStyle.bodySmall.copyWith(color: AppColors.mainColor),
+            style: AppTextStyle.bodySmall(context),
+            moreStyle: AppTextStyle.bodySmall(context)
+                .copyWith(color: AppColors.mainColor),
+            lessStyle: AppTextStyle.bodySmall(context)
+                .copyWith(color: AppColors.mainColor),
             trimMode: TrimMode.Line,
             trimLines: 3,
             trimCollapsedText: LocaleKeys.showMore.tr(),

@@ -58,7 +58,7 @@ class _EmptyWidgetState extends State<EmptyWidget>
           15.verticalSpace,
           CustomTextWidget(
             text: widget.text,
-            textStyle: AppTextStyle.bodyLargeSemiBold,
+            textStyle: AppTextStyle.bodyLargeSemiBold(context),
             textAlign: TextAlign.center,
           ),
           8.verticalSpace,
@@ -67,7 +67,7 @@ class _EmptyWidgetState extends State<EmptyWidget>
               padding: 50.padHorizontal,
               child: CustomTextWidget(
                 text: widget.text2!,
-                textStyle: AppTextStyle.bodySmall,
+                textStyle: AppTextStyle.bodySmall(context),
                 textColor: AppColors.secondColor,
                 textAlign: TextAlign.center,
                 maxLines: 10,

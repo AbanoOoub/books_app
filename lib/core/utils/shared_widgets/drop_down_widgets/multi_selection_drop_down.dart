@@ -68,7 +68,7 @@ class MultiSelectionDropDown extends StatelessWidget {
             filled: true,
             fillColor: AppColors.white,
             hintText: 'hint',
-            hintStyle: AppTextStyle.bodySmall,
+            hintStyle: AppTextStyle.bodySmall(context),
             border: OutlineInputBorder(
               borderSide: const BorderSide(color: AppColors.grey),
               borderRadius: BorderRadius.circular(18.r),

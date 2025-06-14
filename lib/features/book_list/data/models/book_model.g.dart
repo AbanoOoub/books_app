@@ -76,7 +76,7 @@ FormatsModel _$FormatsModelFromJson(Map<String, dynamic> json) => FormatsModel(
       textPlainCharsetUsAsciiFormat:
           json['text/plain; charset=us-ascii'] as String? ?? '',
       applicationRdfXmlFormat: json['application/rdf+xml'] as String? ?? '',
-      imageJpegFormat: json['image/jpeg'] as String? ?? '',
+      imageJpegFormat: json['image/jpeg'] as String?,
       applicationOctetStreamFormat:
           json['application/octet-stream'] as String? ?? '',
     );

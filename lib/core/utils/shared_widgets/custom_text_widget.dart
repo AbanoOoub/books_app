@@ -31,7 +31,7 @@ class CustomTextWidget extends StatelessWidget {
       style: textStyle != null
           ? textStyle!.copyWith(
               color: textColor, fontWeight: fontWeight, fontSize: fontSize)
-          : AppTextStyle.bodyMedium.copyWith(
+          : AppTextStyle.bodyMedium(context).copyWith(
               color: textColor, fontWeight: fontWeight, fontSize: fontSize),
     );
   }

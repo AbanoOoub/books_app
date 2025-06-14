@@ -44,7 +44,7 @@ class SingleSelectionDropDown extends StatelessWidget {
           contentPadding: 20.padAll,
           filled: true,
           fillColor: AppColors.white,
-          hintStyle: AppTextStyle.bodySmall,
+          hintStyle: AppTextStyle.bodySmall(context),
           border: OutlineInputBorder(
             borderSide: const BorderSide(color: AppColors.grey),
             borderRadius: BorderRadius.circular(18.r),
@@ -62,7 +62,7 @@ class SingleSelectionDropDown extends StatelessWidget {
             borderRadius: BorderRadius.circular(18.r),
           ),
         ),
-        baseStyle: AppTextStyle.bodySmall,
+        baseStyle: AppTextStyle.bodySmall(context),
       ),
 
       /// to design dropdown menu
@@ -86,13 +86,14 @@ class SingleSelectionDropDown extends StatelessWidget {
                 child: Row(
                   children: [
                     CustomTextWidget(
-                        text: item.name, textStyle: AppTextStyle.bodySmall),
+                        text: item.name,
+                        textStyle: AppTextStyle.bodySmall(context)),
                     10.horizontalSpace,
                     Expanded(
                       child: CustomTextWidget(
                           text: item.description,
                           maxLines: 2,
-                          textStyle: AppTextStyle.bodyXSmall),
+                          textStyle: AppTextStyle.bodyXSmall(context)),
                     )
                   ],
                 ),
@@ -107,7 +108,8 @@ class SingleSelectionDropDown extends StatelessWidget {
       dropdownBuilder: (context, selectedItem) {
         if (selectedItem != null) {
           return CustomTextWidget(
-              text: selectedItem.name, textStyle: AppTextStyle.bodySmall);
+              text: selectedItem.name,
+              textStyle: AppTextStyle.bodySmall(context));
         }
         return CustomTextWidget(text: hint);
       },

@@ -68,8 +68,8 @@ class CustomNetworkImage extends StatelessWidget {
                           ),
                       errorWidget: errorWidget ??
                           (context, url, error) {
-                            return const Icon(Icons.error,
-                                color: AppColors.red);
+                            return Assets.images.logo
+                                .image(width: width, height: height);
                           },
                     ),
             )
