@@ -30,7 +30,7 @@ class BookListScreen extends StatelessWidget {
         title: LocaleKeys.gutenbergBooks.tr(),
         isHaveBackButton: false,
         centerTitle: true,
-        titleTextStyle: AppTextStyle.headingXLarge,
+        titleTextStyle: AppTextStyle.headingXLarge(context),
         actions: [
           Padding(
             padding: 20.padHorizontal,

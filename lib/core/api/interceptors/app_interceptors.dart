@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import '../../../init_main.dart';
-import '../../network/netwok_info.dart';
 
 @singleton
 class AppInterceptors extends Interceptor {

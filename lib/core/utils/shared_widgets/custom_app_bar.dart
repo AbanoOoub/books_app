@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: backgroundColor ?? Colors.transparent,
       title: CustomTextWidget(
         text: title,
-        textStyle: titleTextStyle ?? AppTextStyle.bodyMedium,
+        textStyle: titleTextStyle ?? AppTextStyle.bodyMedium(context),
         textColor: titleColor ?? AppColors.textColor,
       ),
       actions: actions,

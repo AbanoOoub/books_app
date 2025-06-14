@@ -1,3 +1,4 @@
+import 'package:books_app/core/constants/strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,13 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations(
-    //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
 
     return MaterialApp.router(
+      title: AppStrings.appName,
       theme: appTheme(),
       debugShowCheckedModeBanner: false,
       routerConfig: getIt<AppRouter>().config(),

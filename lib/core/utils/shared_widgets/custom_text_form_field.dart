@@ -149,19 +149,23 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             RegExp(r'[a-zA-Z0-9!@#$&*~()\-_+={}[\]:;<>,.?/\\|`^% ]'),
           ),
       ],
-      style: AppTextStyle.bodyMedium,
+      style: AppTextStyle.bodyMedium(context),
       onTap: widget.onTap,
       decoration: InputDecoration(
         prefixText: widget.prefixText,
-        prefixStyle: AppTextStyle.bodyMedium.copyWith(color: AppColors.grey),
+        prefixStyle:
+            AppTextStyle.bodyMedium(context).copyWith(color: AppColors.grey),
         alignLabelWithHint: true,
         filled: true,
         fillColor: widget.fillColor ?? AppColors.white,
         hintText: widget.hint,
-        hintStyle: AppTextStyle.bodySmall.copyWith(color: AppColors.grey),
+        hintStyle:
+            AppTextStyle.bodySmall(context).copyWith(color: AppColors.grey),
         labelText: widget.label,
-        labelStyle: AppTextStyle.bodySmall.copyWith(color: AppColors.grey),
-        errorStyle: AppTextStyle.bodyXSmall.copyWith(color: AppColors.red),
+        labelStyle:
+            AppTextStyle.bodySmall(context).copyWith(color: AppColors.grey),
+        errorStyle:
+            AppTextStyle.bodyXSmall(context).copyWith(color: AppColors.red),
         prefixIcon: widget.prefixItem,
         contentPadding: widget.contentPadding ??
             (AppScreenSize.isTablet(context)
@@ -169,7 +173,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     : 18.padVertical) +
                 (15.padHorizontal),
         suffixText: widget.suffixText,
-        suffixStyle: AppTextStyle.bodyMedium
+        suffixStyle: AppTextStyle.bodyMedium(context)
             .copyWith(color: AppColors.grey, height: 0.05.w),
         suffixIcon: widget.suffixItem != null
             ? CustomInkWell(

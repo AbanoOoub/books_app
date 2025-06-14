@@ -70,7 +70,7 @@ class CustomButton extends StatelessWidget {
                     Flexible(
                       child: CustomTextWidget(
                         text: text ?? "",
-                        textStyle: AppTextStyle.bodyMedium
+                        textStyle: AppTextStyle.bodyMedium(context)
                             .copyWith(height: textHeight ?? 0.5.w),
                         textColor: textColor ?? AppColors.secondColor,
                       ),
