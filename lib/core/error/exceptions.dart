@@ -13,34 +13,34 @@ class ServerException implements Exception {
       //400
       case StatusCode.badRequest:
         errorMsg = response['detail'] ?? 'Bad Request';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
       //401
       case StatusCode.unauthorized:
         errorMsg = response['detail'] ?? 'You Are Not Allowed!';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
       //403
       case StatusCode.forbidden:
         errorMsg = response['detail'] ?? 'Wrong Credentials!';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
       //404
       case StatusCode.notFound:
         errorMsg = response['detail'] ?? 'Not found!';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
       //409
       case StatusCode.conflict:
         errorMsg = response['detail'] ?? 'Conflict';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
       //422
       case StatusCode.unProcessableEntity:
         var errorMsg = response['detail'] ?? 'UnProcessable Entity';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
       //500
       case StatusCode.internalServerError:
         var errorMsg = response['detail'] ?? 'Internal Server Error';
-        return ServerException(errorMsg!);
+        throw ServerException(errorMsg!);
 
       default:
-        return const ServerException('Error, Try again!');
+        throw const ServerException('Error, Try again!');
     }
   }
 

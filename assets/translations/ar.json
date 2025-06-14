@@ -1,0 +1,24 @@
+{
+  "gutenbergBooks": "كتب غوتنبرغ",
+  "searchBooks": "بحث عن كتب",
+  "noResults": "لم يتم العثور على نتائج",
+  "showMore": "إظهار المزيد",
+  "showLess": "إظهار أقل",
+  "languages": "اللغات",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "downloaded": "تم التحميل",
+  "time": {
+    "two": "مرتين",
+    "three": "مرات",
+    "four": "مرات",
+    "five": "مرات",
+    "six": "مرات",
+    "seven": "مرات",
+    "eight": "مرات",
+    "nine": "مرات",
+    "ten": "مرات",
+    "other": "مرة"
+  },
+  "somethingWentWrong": "حدث خطأ ما"
+}
