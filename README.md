@@ -29,16 +29,17 @@ Cached images with placeholders using cached_network_image.
 🔄 Pull to Refresh: Custom-themed RefreshIndicator.
 
 # 🛠 Tech Stack
+```plaintext
 (Area)	              (Package/Tool)
 State Management	    flutter_bloc
-Networking	            dio
+Networking	          dio
 Dependency Injection	injectable, get_it
 Local Storage	        sqflite
 Localization	        easy_localization
 Responsive UI	        flutter_screenutil
 Image Caching	        cached_network_image
-Icons & Assets	        flutter_svg, custom asset gen
-
+Icons & Assets	      flutter_svg, custom asset gen
+```
 
 # 📦 Project Structure
 ```plaintext
@@ -73,5 +74,3 @@ flutter run
 
 # 🤝 Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
-
-
