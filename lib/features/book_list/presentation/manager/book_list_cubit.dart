@@ -2,6 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:books_app/core/constants/app_constants.dart';
 import 'package:books_app/core/utils/app_colors.dart';
 import 'package:books_app/features/book_list/domain/use_cases/get_book_list.dart';
+import 'package:books_app/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -52,9 +54,7 @@ class BookListCubit extends Cubit<BookListState> {
             state.copyWith(currStatus: BookListStateStatus.getBookListError()));
       },
       (books) => emit(state.copyWith(
-          page: books.isEmpty ? state.page : state.page + 1,
-          currStatus: BookListStateStatus.getBookListSuccess(),
-          books: books)),
+          currStatus: BookListStateStatus.getBookListSuccess(), books: books)),
     );
   }
 
@@ -62,7 +62,7 @@ class BookListCubit extends Cubit<BookListState> {
     await EasyLoading.show(indicator: AppConstants.loading);
 
     final result = await getBookListUseCase(
-        GetBookListParams(page: state.page, searchTerm: state.searchTerm));
+        GetBookListParams(page: state.page + 1, searchTerm: state.searchTerm));
     await EasyLoading.dismiss();
 
     result.fold(
@@ -72,12 +72,17 @@ class BookListCubit extends Cubit<BookListState> {
         emit(
             state.copyWith(currStatus: BookListStateStatus.getBookListError()));
       },
-      (books) => emit(
-        state.copyWith(
-            currStatus: BookListStateStatus.getBookListSuccess(),
-            page: books.isEmpty ? state.page : state.page + 1,
-            books: [...state.books, ...books]),
-      ),
+      (books) {
+        if (books.isEmpty) {
+          Fluttertoast.showToast(msg: LocaleKeys.noResults.tr());
+        }
+        emit(
+          state.copyWith(
+              currStatus: BookListStateStatus.getBookListSuccess(),
+              page: books.isEmpty ? state.page : state.page + 1,
+              books: [...state.books, ...books]),
+        );
+      },
     );
   }
 

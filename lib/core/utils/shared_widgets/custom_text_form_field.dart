@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../init_main.dart';
 import '../app_colors.dart';
+import '../app_screen_size.dart';
 import '../app_text_style.dart';
 import 'custom_ink_well.dart';
 
@@ -164,7 +164,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         errorStyle: AppTextStyle.bodyXSmall.copyWith(color: AppColors.red),
         prefixIcon: widget.prefixItem,
         contentPadding: widget.contentPadding ??
-            (isTablet(context: context) ? 30.padVertical : 18.padVertical) +
+            (AppScreenSize.isTablet(context)
+                    ? 30.padVertical
+                    : 18.padVertical) +
                 (15.padHorizontal),
         suffixText: widget.suffixText,
         suffixStyle: AppTextStyle.bodyMedium
@@ -177,7 +179,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 child: widget.suffixItem!)
             : (widget.isPassword)
                 ? Padding(
-                    padding: isTablet(context: context)
+                    padding: AppScreenSize.isTablet(context)
                         ? 20.padHorizontal
                         : 6.padHorizontal,
                     child: IconButton(
@@ -185,10 +187,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                         onPressed: () => setState(() => isObscure = !isObscure),
                         icon: (isObscure)
                             ? Icon(Icons.visibility_off,
-                                size: isTablet(context: context) ? 25.h : 17.h,
+                                size: AppScreenSize.isTablet(context)
+                                    ? 25.h
+                                    : 17.h,
                                 color: AppColors.grey)
                             : Icon(Icons.visibility,
-                                size: isTablet(context: context) ? 25.h : 17.h,
+                                size: AppScreenSize.isTablet(context)
+                                    ? 25.h
+                                    : 17.h,
                                 color: AppColors.grey)),
                   )
                 : null,

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:books_app/core/utils/app_screen_size.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,9 +8,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'config/routes/app_router.dart';
 import 'core/constants/app_locales.dart';
 import 'core/observers/bloc_observer.dart';
+import 'core/services/sql_database_service.dart';
 import 'core/utils/app_colors.dart';
 import 'init_main.config.dart';
 
@@ -45,7 +46,7 @@ Future<Widget> initMain(Widget child) async {
   Bloc.observer = MyBlocObserver();
   await EasyLocalization.ensureInitialized();
   await initializeDateFormatting();
-  // await SqlDatabaseService.init();
+  await SqlDatabaseService.init();
 
   configLoading();
 
@@ -68,13 +69,4 @@ Future<Widget> initMain(Widget child) async {
       child: child,
     ),
   );
-}
-
-bool isTablet({BuildContext? context}) {
-  final currContext =
-      getIt<AppRouter>().navigatorKey.currentState?.context ?? context;
-  if (MediaQuery.of(currContext!).size.shortestSide > 600) {
-    return true;
-  }
-  return false;
 }

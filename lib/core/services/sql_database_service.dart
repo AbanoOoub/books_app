@@ -23,38 +23,45 @@ class SqlDatabaseService {
   }
 
   static Future<void> _onCreate(Database db, int version) async {
-    await db.execute(
-        'CREATE TABLE ExchangeHistory (id INTEGER PRIMARY KEY, base TEXT, date TEXT)');
-    log('------------------ Table Created ------------------');
+    await db.execute('''
+    CREATE TABLE Books (
+        book_id INTEGER PRIMARY KEY, 
+        title TEXT,
+        page INTEGER,
+        full_json TEXT)
+        ''');
+
+    log('------------------ Tables Created ------------------');
   }
 
   static Future<void> _onUpgrade(
       Database db, int oldVersion, int newVersion) async {
     if (oldVersion < newVersion) {
-      await db.execute('DROP TABLE IF EXISTS ExchangeHistory');
+      await db.execute('DROP TABLE IF EXISTS Books');
       await _onCreate(db, newVersion);
       log('------------------ Table Updated ------------------');
       log('old table dropped and new one created');
     }
   }
 
-  Future<List<Map>> readFromDatabase(String sql) async {
+  Future<List<Map>> readFromDatabase(String sql, [List<Object>? args]) async {
     Database? myDatabase = await database;
-    var res = await myDatabase!.rawQuery(sql);
+    var res = await myDatabase!.rawQuery(sql, args);
     return res;
   }
 
-  void updateInDatabase(String sql) async {
+  Future<void> updateInDatabase(String sql) async {
     Database? myDatabase = await database;
     await myDatabase!.rawUpdate(sql);
   }
 
-  void insertToDatabase({required String sql, List<dynamic>? args}) async {
+  Future<void> insertToDatabase(
+      {required String sql, List<dynamic>? args}) async {
     Database? myDatabase = await database;
     await myDatabase!.rawInsert(sql, args);
   }
 
-  void deleteFromDatabase(String sql) async {
+  Future<void> deleteFromDatabase(String sql) async {
     Database? myDatabase = await database;
     await myDatabase!.rawDelete(sql);
   }

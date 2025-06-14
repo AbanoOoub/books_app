@@ -31,14 +31,14 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [logo];
 }
 
-class $AssetsLanguagesGen {
-  const $AssetsLanguagesGen();
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
 
-  /// File path: assets/languages/ar.json
-  String get ar => 'assets/languages/ar.json';
+  /// File path: assets/translations/ar.json
+  String get ar => 'assets/translations/ar.json';
 
-  /// File path: assets/languages/en.json
-  String get en => 'assets/languages/en.json';
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
 
   /// List of all assets
   List<String> get values => [ar, en];
@@ -49,7 +49,7 @@ class Assets {
 
   static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
-  static const $AssetsLanguagesGen languages = $AssetsLanguagesGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {
