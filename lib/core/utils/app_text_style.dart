@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:books_app/core/utils/app_screen_size.dart';
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
@@ -32,23 +30,23 @@ class AppTextStyle {
 
   // Body Texts
   static TextStyle bodyLarge(BuildContext context) =>
-      _textStyle(context, 18, FontWeight.w400);
+      _textStyle(context, 20, FontWeight.w400);
 
   static TextStyle bodyMedium(BuildContext context) =>
-      _textStyle(context, 16, FontWeight.w400);
+      _textStyle(context, 18, FontWeight.w400);
 
   static TextStyle bodySmall(BuildContext context) =>
-      _textStyle(context, 14, FontWeight.w400);
+      _textStyle(context, 16, FontWeight.w400);
 
   static TextStyle bodyXSmall(BuildContext context) =>
-      _textStyle(context, 12, FontWeight.w400);
+      _textStyle(context, 14, FontWeight.w400);
 
   // Body Texts SemiBold
   static TextStyle bodyLargeSemiBold(BuildContext context) =>
-      _textStyle(context, 18, FontWeight.w700);
+      _textStyle(context, 20, FontWeight.w700);
 
   static TextStyle linkMedium(BuildContext context) =>
-      _textStyle(context, 16, FontWeight.w400, underline: true);
+      _textStyle(context, 18, FontWeight.w400, underline: true);
 
   static TextStyle linkSmall(BuildContext context) =>
       _textStyle(context, 14, FontWeight.w400, underline: true);
@@ -59,7 +57,7 @@ double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   double responsiveFontSize = fontSize * scaleFactor;
 
   double lowerLimit = fontSize * 0.85;
-  double upperLimit = fontSize * 1.2;
+  double upperLimit = fontSize * 1.8;
 
   double finalSize = responsiveFontSize.clamp(lowerLimit, upperLimit);
   return finalSize;

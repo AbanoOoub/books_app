@@ -6,8 +6,8 @@ import '../../gen/assets.gen.dart';
 class AppConstants {
   static Widget loading = Assets.animations.loading.lottie(
     repeat: true,
-    width: 100.h,
-    height: 100.h,
+    width: 100.w,
+    height: 100.w,
     fit: BoxFit.contain,
   );
 }

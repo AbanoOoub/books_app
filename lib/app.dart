@@ -16,15 +16,18 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
 
-    return MaterialApp.router(
-      title: AppStrings.appName,
-      theme: appTheme(),
-      debugShowCheckedModeBanner: false,
-      routerConfig: getIt<AppRouter>().config(),
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      builder: EasyLoading.init(),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1)),
+      child: MaterialApp.router(
+        title: AppStrings.appName,
+        theme: appTheme(),
+        debugShowCheckedModeBanner: false,
+        routerConfig: getIt<AppRouter>().config(),
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        builder: EasyLoading.init(),
+      ),
     );
   }
 }
