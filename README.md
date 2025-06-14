@@ -29,6 +29,7 @@ SOLID principles applied throughout:
 
 🧰 Utilities:
 Responsive design using flutter_screenutil.
+Adaptive design using LayoutBuilder with MediaQuery.
 Cached images with placeholders using cached_network_image.
 
 📱 Theming: Customizable light theme with app-wide color and typography settings.
@@ -38,15 +39,17 @@ Cached images with placeholders using cached_network_image.
 # 🛠 Tech Stack
 
 ```plaintext
-(Area)	                 (Package/Tool)
-State Management	    -> flutter_bloc
-Networking	          -> dio
-Dependency Injection	-> injectable, get_it
-Local Storage	        -> sqflite
-Localization	        -> easy_localization
-Responsive UI	        -> flutter_screenutil
-Image Caching	        -> cached_network_image
-Icons & Assets	      -> flutter_svg, custom asset gen
+| Area                 | Package/Tool                                                       |
+| -------------------- | ------------------------------------------------------------------ |
+| State Management     | flutter\_bloc                                                      |
+| Networking           | dio                                                                |
+| Dependency Injection | injectable, get\_it                                                |
+| Local Storage        | sqflite                                                            |
+| Responsive UI        | flutter\_screenutil, adaptive layout with MediaQuery/LayoutBuilder |
+| Image Caching        | cached\_network\_image                                             |
+| Localization         | easy\_localization                                                 |
+| Icons & Assets       | flutter\_svg, custom asset gen                                     |
+
 ```
 
 # 📦 Project Structure
