@@ -11,12 +11,14 @@ Built with scalable, maintainable code using best practices like dependency inje
 📡 API Integration: Fetch data from RESTFUL APIs using Dio.
 
 🌐 Offline Support:
+
 Data is cached using SQLite to enable browsing without the internet.
 Cached data is used when the app is offline.
 
 💾 Local Storage: Save full book data locally using SQLite for performance and offline access.
 
 🧠 Clean Architecture:
+
 Layered structure: Data → Domain → Presentation.
 
 SOLID principles applied throughout:
@@ -28,8 +30,11 @@ SOLID principles applied throughout:
   🧪 Error Handling: Graceful handling for Dio errors (e.g., 301 redirects).
 
 🧰 Utilities:
+
 Responsive design using flutter_screenutil.
+
 Adaptive design using LayoutBuilder with MediaQuery.
+
 Cached images with placeholders using cached_network_image.
 
 📱 Theming: Customizable light theme with app-wide color and typography settings.
@@ -89,3 +94,14 @@ flutter run
 
 # 🤝 Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
+
+
+## 📸 Screenshots
+
+### 📱 Mobile Layout
+<img src="screenshots/1.png" width="300"/>  <img src="screenshots/2.png" width="300"/>  <img src="screenshots/3.png" width="300"/>
+<img src="screenshots/4.png" width="300"/>  <img src="screenshots/5.png" width="300"/>  <img src="screenshots/6.png" width="300"/>
+
+
+### 💻 Tablet Layout
+<img src="screenshots/7.png" width="300"/>  <img src="screenshots/8.png" width="300"/>
