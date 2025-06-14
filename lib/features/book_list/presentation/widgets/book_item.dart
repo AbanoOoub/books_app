@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/custom_network_image.dart';
+import '../../../../core/utils/shared_widgets/custom_network_image.dart';
 import '../../../../core/utils/shared_widgets/custom_text_widget.dart';
 import '../../../../gen/locale_keys.g.dart';
 import '../../domain/entities/book_entity.dart';

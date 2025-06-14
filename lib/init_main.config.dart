@@ -19,6 +19,8 @@ import 'core/api/interfaces/i_api_requests.dart' as _i924;
 import 'core/helpers/pretty_logs.dart' as _i562;
 import 'core/network/netwok_info.dart' as _i753;
 import 'core/services/sql_database_service.dart' as _i548;
+import 'features/book_list/data/data_sources/book_list_local_date_source.dart'
+    as _i629;
 import 'features/book_list/data/data_sources/book_list_remote_data_source.dart'
     as _i903;
 import 'features/book_list/data/repositories/book_list_repo_impl.dart' as _i436;
@@ -48,9 +50,15 @@ _i174.GetIt $initGetIt(
   gh.factory<_i903.BookListRemoteDataSource>(() =>
       _i903.BookListRemoteDataSourceImpl(
           apiRequests: gh<_i924.IApiRequests>()));
+  gh.factory<_i629.BookListLocalDataSource>(() =>
+      _i629.BookListLocalDataSourceImpl(
+          databaseService: gh<_i548.SqlDatabaseService>()));
   gh.factory<_i753.INetworkInfo>(() => _i753.NetworkInfo());
-  gh.factory<_i3.BookListRepo>(
-      () => _i436.BookListRepoImpl(gh<_i903.BookListRemoteDataSource>()));
+  gh.factory<_i3.BookListRepo>(() => _i436.BookListRepoImpl(
+        gh<_i903.BookListRemoteDataSource>(),
+        gh<_i629.BookListLocalDataSource>(),
+        gh<_i753.INetworkInfo>(),
+      ));
   gh.lazySingleton<_i306.GetBookListUseCase>(
       () => _i306.GetBookListUseCase(gh<_i3.BookListRepo>()));
   gh.factory<_i854.BookListCubit>(
