@@ -29,7 +29,7 @@ Cached images with placeholders using cached_network_image.
 🔄 Pull to Refresh: Custom-themed RefreshIndicator.
 
 # 🛠 Tech Stack
-## Area	                Package/Tool
+(Area)	              (Package/Tool)
 State Management	    flutter_bloc
 Networking	            dio
 Dependency Injection	injectable, get_it
@@ -41,6 +41,7 @@ Icons & Assets	        flutter_svg, custom asset gen
 
 
 # 📦 Project Structure
+```plaintext
 lib/
 ├── core/
 │   ├── error/
@@ -60,6 +61,7 @@ lib/
 │   └── widgets/
 ├── gen/
 └── main.dart
+```
 
 # 🔧 Getting Started
 git clone https://github.com/AbanoOoub/books_app.git
