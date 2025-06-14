@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../../config/routes/app_router.dart';
 import '../../../../core/constants/app_locales.dart';
@@ -25,6 +26,9 @@ class LanguageSelectionBottomSheet extends StatelessWidget {
             context.router.replaceAll([
               SplashRoute(),
             ], updateExistingRoutes: false);
+          }
+          if (state.currStatus is ChangeLangError) {
+            Fluttertoast.showToast(msg: LocaleKeys.somethingWentWrong.tr());
           }
         },
         builder: (context, state) {

@@ -11,5 +11,6 @@
   "time": {
     "one": "time",
     "other": "times"
-  }
+  },
+  "somethingWentWrong": "Something went wrong"
 }

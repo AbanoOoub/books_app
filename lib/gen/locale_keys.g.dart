@@ -13,5 +13,6 @@ abstract class  LocaleKeys {
   static const english = 'english';
   static const downloaded = 'downloaded';
   static const time = 'time';
+  static const somethingWentWrong = 'somethingWentWrong';
 
 }

@@ -43,7 +43,7 @@ Future<Widget> initMain(Widget child) async {
 
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = MyBlocObserver();
-  EasyLocalization.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await initializeDateFormatting();
   // await SqlDatabaseService.init();
 

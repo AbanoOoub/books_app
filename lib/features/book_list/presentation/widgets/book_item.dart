@@ -69,9 +69,9 @@ class BookItem extends StatelessWidget {
                   10.verticalSpace,
                   CustomTextWidget(
                     text:
-                        "${LocaleKeys.downloaded.tr()} ${downloadsCount.toString()} ${LocaleKeys.time.tr(args: [
-                          downloadsCount.toString()
-                        ])}",
+                        "${LocaleKeys.downloaded.tr()} ${downloadsCount.toString()} ${LocaleKeys.time.plural(
+                      downloadsCount,
+                    )}",
                     maxLines: 2,
                     textStyle: AppTextStyle.bodySmall,
                     textColor: AppColors.grey,
